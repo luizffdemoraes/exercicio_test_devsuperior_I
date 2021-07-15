@@ -6,9 +6,9 @@ public class Financing {
 	private Double income;
 	private Integer months;
 
-	public Financing() {
-
-	}
+//	public Financing() {
+//
+//	}
 
 	public Financing(Double totalAmount, Double income, Integer months) {
 		financingVerification(totalAmount, income, months);
