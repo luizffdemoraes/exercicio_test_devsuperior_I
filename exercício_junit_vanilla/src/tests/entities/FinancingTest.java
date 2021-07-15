@@ -99,7 +99,7 @@ class FinancingTest {
 		// Assertion Verificação
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			// Arrange cenário
-			Financing financing = new Financing(100000.0, 2000.0, 20);
+			Financing financing = new Financing(10000000000000000.0, 200.0, 2);
 
 		});
 
@@ -112,7 +112,7 @@ class FinancingTest {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			// Arrange cenário
 			Financing financing = new Financing(100000.0, 2000.0, 80);
-			financing.setTotalAmount(200000.0);
+			financing.setTotalAmount(20000000.0);
 
 		});
 
@@ -125,7 +125,7 @@ class FinancingTest {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			// Arrange cenário
 			Financing financing = new Financing(100000.0, 2000.0, 80);
-			financing.setIncome(1000.0);
+			financing.setIncome(200.0);
 
 		});
 
