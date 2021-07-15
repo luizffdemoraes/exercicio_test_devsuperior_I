@@ -11,9 +11,7 @@ public class Financing {
 	}
 
 	public Financing(Double totalAmount, Double income, Integer months) {
-		if ((totalAmount * 0.2) / months  > income / 2.0) {
-			throw new IllegalArgumentException("A prestação não pode ser maior que metade da renda");
-		}
+		financingVerification(totalAmount, income, months);
 
 		this.totalAmount = totalAmount;
 		this.income = income;
@@ -25,9 +23,7 @@ public class Financing {
 	}
 
 	public void setTotalAmount(Double totalAmount) {
-		if ((totalAmount * 0.2) / months  > income / 2.0) {
-			throw new IllegalArgumentException("A prestação não pode ser maior que metade da renda");
-		}
+		financingVerification(totalAmount, income, months);
 		this.totalAmount = totalAmount;
 	}
 
@@ -36,9 +32,7 @@ public class Financing {
 	}
 
 	public void setIncome(Double income) {
-		if ((totalAmount * 0.2) / months  > income / 2.0) {
-			throw new IllegalArgumentException("A prestação não pode ser maior que metade da renda");
-		}
+		financingVerification(totalAmount, income, months);
 		this.income = income;
 	}
 
@@ -47,9 +41,7 @@ public class Financing {
 	}
 
 	public void setMonths(Integer months) {
-		if ((totalAmount * 0.2) / months  > income / 2.0) {
-			throw new IllegalArgumentException("A prestação não pode ser maior que metade da renda");
-		}
+		financingVerification(totalAmount, income, months);
 		this.months = months;
 	}
 
@@ -59,6 +51,12 @@ public class Financing {
 
 	public double quota() {
 		return (this.totalAmount - entry()) / months;
+	}
+
+	public void financingVerification(Double totalAmount, Double income, Integer months) {
+		if ((totalAmount * 0.2) / months > income / 2.0) {
+			throw new IllegalArgumentException("A prestação não pode ser maior que metade da renda");
+		}
 	}
 
 }
